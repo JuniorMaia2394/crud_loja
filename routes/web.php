@@ -18,8 +18,23 @@ Route::get('/', function () {
 });
 
 //route cliente
+Route::get('/cliente/novo', 'App\Http\Controllers\ClienteController@create');
+Route::post('/cliente/novo', 'App\Http\Controllers\ClienteController@store')->name('registrar_cliente');
+Route::get('/cliente/ver/{id}', 'App\Http\Controllers\ClienteController@show')->name('ver_cliente');
+Route::get('/cliente/editar/{id}', 'App\Http\Controllers\ClienteController@edit');
+Route::post('/cliente/editar/{id}', 'App\Http\Controllers\ClienteController@update')->name('alterar_cliente');
+Route::get('/cliente/excluir/{id}', 'App\Http\Controllers\ClienteController@delete');
+Route::post('/cliente/excluir/{id}', 'App\Http\Controllers\ClienteController@destroy')->name('excluir_cliente');
+
 
 //route pedido
+Route::get('/pedido/novo', 'App\Http\Controllers\PedidoController@create');
+Route::post('/pedido/novo', 'App\Http\Controllers\PedidoController@store')->name('registrar_pedido');
+Route::get('/pedido/ver/{id}', 'App\Http\Controllers\PedidoController@show')->name('ver_pedido');
+Route::get('/pedido/editar/{id}', 'App\Http\Controllers\PedidoController@edit');
+Route::post('/pedido/editar/{id}', 'App\Http\Controllers\PedidoController@update')->name('alterar_pedido');
+Route::get('/pedido/excluir/{id}', 'App\Http\Controllers\PedidoController@delete');
+Route::post('/pedido/excluir/{id}', 'App\Http\Controllers\PedidoController@destroy')->name('excluir_pedido');
 
 //route produto
 Route::get('/produto/novo', 'App\Http\Controllers\ProdutosController@create');

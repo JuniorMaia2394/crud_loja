@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->String('nome_cliente')->nullable();
-            $table->date('data_pedido')->nullable();
-            $table->String('telefone')->nullable();
+            $table->unsignedBigInteger('id_cliente');
+            $table->unsignedBigInteger('id_produto');
+            $table->double('quantidade');
+            $table->double('valor_total');
             $table->timestamps();
         });
     }

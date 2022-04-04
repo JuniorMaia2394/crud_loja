@@ -45,6 +45,5 @@ Route::post('/produto/editar/{id}', 'App\Http\Controllers\ProdutosController@upd
 Route::get('/produto/excluir/{id}', 'App\Http\Controllers\ProdutosController@delete');
 Route::post('/produto/excluir/{id}', 'App\Http\Controllers\ProdutosController@destroy')->name('excluir_produto');
 
-
-
+//route login
 Route::get('/login', 'App\Http\Controllers\LoginController@login');

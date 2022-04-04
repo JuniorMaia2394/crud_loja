@@ -18,6 +18,7 @@ class ClienteController extends Controller
             'telefone' => $request->telefone,
             'endereco' => $request->endereco,
             'password' => $request->senha,
+            'pedido' => $request->pedido,
 
         ]);
         return "Cliente criado com sucesso!";
@@ -44,6 +45,7 @@ class ClienteController extends Controller
             'telefone' => $request->telefone,
             'endereco' => $request->endereco,
             'password' => $request->senha,
+            'pedido' => $request->pedido,
         ]);
         return "Cliente alterado com sucesso!";
     }
@@ -59,4 +61,6 @@ class ClienteController extends Controller
 
         return "Cliente Exlcuído com Sucesso";
     }
+
+
 }

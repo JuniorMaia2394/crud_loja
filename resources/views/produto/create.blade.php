@@ -8,13 +8,14 @@
     <title>Cadastrar produto</title>
 </head>
 <body>
+</br>
     <center>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
         <form action="{{ route('registrar_produto')}}" method="post">
             @csrf
             <label for="">Nome produto</label><br />
             <input type="text" name="nome"><br />
-            <label for="">Imagem produto</label><br />
-            <input type="file" name="imagem"><br />
             <label for="">Categoria</label><br />
             <input type="text" name="categoria"><br />
             <label for="">Desenvolvedora</label><br />
@@ -23,8 +24,11 @@
             <input type="number" name="preço"><br />
             <label for="">Sinopse</label><br />
             <input type="text" name="sinopse"><br />
-            <button>Criar</button>
+        </br><button class="btn btn-primary">Criar</button>
+
         </form>
+    </div>
+</div>
     </center>
 </body>
 </html>

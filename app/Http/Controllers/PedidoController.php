@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Pedido;
 use Illuminate\Http\Request;
 
@@ -13,10 +14,10 @@ class PedidoController extends Controller
 
     public function store(Request $request){
         Pedido::create([
-            'nome_cliente' => $request->nome_cliente,
-            'nome_pedido' => $request->nome_pedido,
-            'data_pedido' => $request->data_pedido,
-            'telefone' => $request->telefone,
+            'id_cliente' => $request->id_cliente,
+            'id_produto' => $request->id_produto,
+            'quantidade' => $request->quantidade,
+            'valor_total' => $request->valor_total,
         ]);
         return "Pedido criado com sucesso!";
 
@@ -37,11 +38,10 @@ class PedidoController extends Controller
         $pedido = Pedido::findOrFail($id);
 
         $pedido->update([
-            'nome_cliente' => $request->nome_cliente,
-            'nome_pedido' => $request->nome_pedido,
-            'data_pedido' => $request->data_pedido,
-            'telefone' => $request->telefone,
-
+            'id_cliente' => $request->id_cliente,
+            'id_produto' => $request->id_produto,
+            'quantidade' => $request->quantidade,
+            'valor_total' => $request->valor_total,
         ]);
         return "Pedido alterado com sucesso!";
     }
@@ -54,7 +54,13 @@ class PedidoController extends Controller
     public function destroy($id){
         $pedido = Pedido::findOrFail($id);
         $pedido->delete();
-
         return "Pedido Exlcuído com Sucesso";
     }
+
+    public function pedidos()
+    {
+        $pedido['pedidos'] = Pedido::all();
+        return view('pedido.all', $pedido);
+    }
+
 }

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
 
-    protected $fillable = ['nome_produto', 'categoria', 'desenvolvedora', 'comentario', 'preço', 'imagem'];
+    protected $fillable = ['nome_produto', 'categoria', 'desenvolvedora', 'comentario', 'preço', ];
 
     public function pedido()
     {

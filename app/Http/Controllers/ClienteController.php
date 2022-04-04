@@ -26,7 +26,9 @@ class ClienteController extends Controller
     }
 
     public function show($id){
-        $cliente = Cliente::findOrFail($id);
+
+        $cliente = Cliente::with('pedido')->findOrFail($id);
+
         return view('cliente.show', ['cliente'=>$cliente]);
 
     }
@@ -60,6 +62,12 @@ class ClienteController extends Controller
         $cliente->delete();
 
         return "Cliente Exlcuído com Sucesso";
+    }
+
+    public function clientes()
+    {
+        $cliente['clientes'] = Cliente::all();
+        return view('cliente.all', $cliente);
     }
 
 

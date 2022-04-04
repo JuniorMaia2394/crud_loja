@@ -8,6 +8,9 @@
     <title>Criar Cliente</title>
 </head>
 <body>
+</br><div style="margin-left:1rem; margin-top:1rem">
+    <a href="{{ route('home') }}" class="btn btn-primary">Home</a>
+</div>
 </br>
     <center>
         <div class="card" style="width: 18rem;">

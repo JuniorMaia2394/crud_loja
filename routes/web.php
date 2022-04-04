@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 //home
-Route::get('/home', 'App\Http\Controllers\HomeController@home');
+Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('home');
 
 //route cliente
 Route::get('/cliente/novo', 'App\Http\Controllers\ClienteController@create');

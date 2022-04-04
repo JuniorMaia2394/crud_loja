@@ -8,9 +8,12 @@
     <title>Todos os pedidos</title>
 </head>
 <body>
+</br><div style="margin-left:1rem; margin-top:1rem">
+    <a href="{{ route('home') }}" class="btn btn-primary">Home</a>
+</div>
     <center>
         @foreach ($pedidos as $pedido)
-    </br>
+
         <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">{{$pedido->id_cliente}}</h5>

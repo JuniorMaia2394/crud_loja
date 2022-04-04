@@ -9,7 +9,9 @@
     <title>Editar produto</title>
 </head>
 <body>
-</br>
+</br><div style="margin-left:1rem; margin-top:1rem">
+    <a href="{{ route('home') }}" class="btn btn-primary">Home</a>
+</div>
 <center>
     <div class="card" style="width: 18rem;">
 
